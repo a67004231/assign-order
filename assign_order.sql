@@ -1,23 +1,5 @@
-/*
-Navicat MySQL Data Transfer
+﻿SET FOREIGN_KEY_CHECKS=0;
 
-Source Server         : n1-db
-Source Server Version : 80026
-Source Host           : 206.119.90.169:3306
-Source Database       : assign_order
-
-Target Server Type    : MYSQL
-Target Server Version : 80026
-File Encoding         : 65001
-
-Date: 2022-01-29 18:01:26
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for capital_acc_info
--- ----------------------------
 DROP TABLE IF EXISTS `capital_acc_info`;
 CREATE TABLE `capital_acc_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -36,9 +18,6 @@ CREATE TABLE `capital_acc_info` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for capital_info
--- ----------------------------
 DROP TABLE IF EXISTS `capital_info`;
 CREATE TABLE `capital_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -56,9 +35,6 @@ CREATE TABLE `capital_info` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=224 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for capital_info_log
--- ----------------------------
 DROP TABLE IF EXISTS `capital_info_log`;
 CREATE TABLE `capital_info_log` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -79,9 +55,6 @@ CREATE TABLE `capital_info_log` (
   KEY `index_amt_total` (`mer_id`,`channel_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=914 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for capital_pay_log
--- ----------------------------
 DROP TABLE IF EXISTS `capital_pay_log`;
 CREATE TABLE `capital_pay_log` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -107,9 +80,6 @@ CREATE TABLE `capital_pay_log` (
   KEY `idnex_amt_total` (`channel_id`,`mer_id`,`create_time`,`status`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2197 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for channel_account
--- ----------------------------
 DROP TABLE IF EXISTS `channel_account`;
 CREATE TABLE `channel_account` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -124,9 +94,6 @@ CREATE TABLE `channel_account` (
   UNIQUE KEY `ukey_mer_no` (`channel_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户账户表';
 
--- ----------------------------
--- Table structure for channel_account_log
--- ----------------------------
 DROP TABLE IF EXISTS `channel_account_log`;
 CREATE TABLE `channel_account_log` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '账户变更记录ID',
@@ -147,9 +114,6 @@ CREATE TABLE `channel_account_log` (
   FULLTEXT KEY `channel_text` (`change_text`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1487365260930260995 DEFAULT CHARSET=utf8mb3 COMMENT='商户账户变更记录表-话费充值';
 
--- ----------------------------
--- Table structure for channel_info
--- ----------------------------
 DROP TABLE IF EXISTS `channel_info`;
 CREATE TABLE `channel_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -176,9 +140,6 @@ CREATE TABLE `channel_info` (
   UNIQUE KEY `ukey_channel_id` (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='通道信息表';
 
--- ----------------------------
--- Table structure for channel_mer_auth
--- ----------------------------
 DROP TABLE IF EXISTS `channel_mer_auth`;
 CREATE TABLE `channel_mer_auth` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -194,9 +155,6 @@ CREATE TABLE `channel_mer_auth` (
   UNIQUE KEY `pk_channel_mer_id` (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for channel_order_info
--- ----------------------------
 DROP TABLE IF EXISTS `channel_order_info`;
 CREATE TABLE `channel_order_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -221,9 +179,6 @@ CREATE TABLE `channel_order_info` (
   KEY `sys_order_no` (`sys_order_no`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1487365245738491906 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for channel_setting_info
--- ----------------------------
 DROP TABLE IF EXISTS `channel_setting_info`;
 CREATE TABLE `channel_setting_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -246,9 +201,6 @@ CREATE TABLE `channel_setting_info` (
   UNIQUE KEY `ukey_third_code` (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='通道账户表';
 
--- ----------------------------
--- Table structure for channel_start
--- ----------------------------
 DROP TABLE IF EXISTS `channel_start`;
 CREATE TABLE `channel_start` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -268,9 +220,6 @@ CREATE TABLE `channel_start` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for channel_stock
--- ----------------------------
 DROP TABLE IF EXISTS `channel_stock`;
 CREATE TABLE `channel_stock` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -286,9 +235,6 @@ CREATE TABLE `channel_stock` (
   KEY `ukey_stock_create_tim` (`create_time`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1478392438618890242 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='通道信息表';
 
--- ----------------------------
--- Table structure for company_info
--- ----------------------------
 DROP TABLE IF EXISTS `company_info`;
 CREATE TABLE `company_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -303,9 +249,6 @@ CREATE TABLE `company_info` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 
--- ----------------------------
--- Table structure for factor_info
--- ----------------------------
 DROP TABLE IF EXISTS `factor_info`;
 CREATE TABLE `factor_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -323,9 +266,6 @@ CREATE TABLE `factor_info` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for factor_log
--- ----------------------------
 DROP TABLE IF EXISTS `factor_log`;
 CREATE TABLE `factor_log` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -353,9 +293,6 @@ CREATE TABLE `factor_log` (
   KEY `factor_order_no` (`sys_order_no`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1487365245390364674 DEFAULT CHARSET=utf8mb3;
 
--- ----------------------------
--- Table structure for gen_table
--- ----------------------------
 DROP TABLE IF EXISTS `gen_table`;
 CREATE TABLE `gen_table` (
   `table_id` bigint NOT NULL AUTO_INCREMENT COMMENT '编号',
@@ -381,9 +318,6 @@ CREATE TABLE `gen_table` (
   PRIMARY KEY (`table_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='代码生成业务表';
 
--- ----------------------------
--- Table structure for gen_table_column
--- ----------------------------
 DROP TABLE IF EXISTS `gen_table_column`;
 CREATE TABLE `gen_table_column` (
   `column_id` bigint NOT NULL AUTO_INCREMENT COMMENT '编号',
@@ -411,9 +345,6 @@ CREATE TABLE `gen_table_column` (
   PRIMARY KEY (`column_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='代码生成业务表字段';
 
--- ----------------------------
--- Table structure for job_order_count
--- ----------------------------
 DROP TABLE IF EXISTS `job_order_count`;
 CREATE TABLE `job_order_count` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -428,9 +359,6 @@ CREATE TABLE `job_order_count` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for logging_event
--- ----------------------------
 DROP TABLE IF EXISTS `logging_event`;
 CREATE TABLE `logging_event` (
   `timestmp` bigint NOT NULL,
@@ -451,9 +379,6 @@ CREATE TABLE `logging_event` (
   PRIMARY KEY (`event_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=13706 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for logging_event_exception
--- ----------------------------
 DROP TABLE IF EXISTS `logging_event_exception`;
 CREATE TABLE `logging_event_exception` (
   `event_id` bigint NOT NULL,
@@ -463,9 +388,6 @@ CREATE TABLE `logging_event_exception` (
   CONSTRAINT `logging_event_exception_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `logging_event` (`event_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for logging_event_property
--- ----------------------------
 DROP TABLE IF EXISTS `logging_event_property`;
 CREATE TABLE `logging_event_property` (
   `event_id` bigint NOT NULL,
@@ -475,9 +397,6 @@ CREATE TABLE `logging_event_property` (
   CONSTRAINT `logging_event_property_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `logging_event` (`event_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for mer_account
--- ----------------------------
 DROP TABLE IF EXISTS `mer_account`;
 CREATE TABLE `mer_account` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -492,9 +411,6 @@ CREATE TABLE `mer_account` (
   UNIQUE KEY `ukey_mer_no` (`mer_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户账户表';
 
--- ----------------------------
--- Table structure for mer_account_log
--- ----------------------------
 DROP TABLE IF EXISTS `mer_account_log`;
 CREATE TABLE `mer_account_log` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '账户变更记录ID',
@@ -513,9 +429,6 @@ CREATE TABLE `mer_account_log` (
   FULLTEXT KEY `mer_acc_text` (`change_text`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1487365267855056899 DEFAULT CHARSET=utf8mb3 COMMENT='商户账户变更记录表-话费充值';
 
--- ----------------------------
--- Table structure for mer_channel_route
--- ----------------------------
 DROP TABLE IF EXISTS `mer_channel_route`;
 CREATE TABLE `mer_channel_route` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -539,9 +452,6 @@ CREATE TABLE `mer_channel_route` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
--- ----------------------------
--- Table structure for mer_info
--- ----------------------------
 DROP TABLE IF EXISTS `mer_info`;
 CREATE TABLE `mer_info` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -574,9 +484,6 @@ CREATE TABLE `mer_info` (
   KEY `key_createby_status` (`status`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户基础信息表';
 
--- ----------------------------
--- Table structure for mer_info_legal
--- ----------------------------
 DROP TABLE IF EXISTS `mer_info_legal`;
 CREATE TABLE `mer_info_legal` (
   `id` bigint NOT NULL,
@@ -606,9 +513,6 @@ CREATE TABLE `mer_info_legal` (
   KEY `key_update_by` (`update_by`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户基础信息表_法人信息';
 
--- ----------------------------
--- Table structure for mer_info_web
--- ----------------------------
 DROP TABLE IF EXISTS `mer_info_web`;
 CREATE TABLE `mer_info_web` (
   `id` bigint NOT NULL,
@@ -627,9 +531,6 @@ CREATE TABLE `mer_info_web` (
   KEY `key_update_by` (`update_by`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户基础信息表-备案信息';
 
--- ----------------------------
--- Table structure for mer_product_auth
--- ----------------------------
 DROP TABLE IF EXISTS `mer_product_auth`;
 CREATE TABLE `mer_product_auth` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '授权ID',
@@ -649,9 +550,6 @@ CREATE TABLE `mer_product_auth` (
   KEY `key_mer_id` (`mer_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=72693 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户产品授权表';
 
--- ----------------------------
--- Table structure for mer_secret_key
--- ----------------------------
 DROP TABLE IF EXISTS `mer_secret_key`;
 CREATE TABLE `mer_secret_key` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '秘钥ID',
@@ -667,9 +565,6 @@ CREATE TABLE `mer_secret_key` (
   KEY `key_mer_no` (`mer_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='商户秘钥管理表';
 
--- ----------------------------
--- Table structure for mobile
--- ----------------------------
 DROP TABLE IF EXISTS `mobile`;
 CREATE TABLE `mobile` (
   `prefix` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -688,9 +583,6 @@ CREATE TABLE `mobile` (
   UNIQUE KEY `mobile_union` (`mobile`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=473173 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='手机号段';
 
--- ----------------------------
--- Table structure for order_info
--- ----------------------------
 DROP TABLE IF EXISTS `order_info`;
 CREATE TABLE `order_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -753,9 +645,6 @@ CREATE TABLE `order_info` (
   KEY `uk_channel_id` (`channel_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1487365273903243267 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='充值通道订单表';
 
--- ----------------------------
--- Table structure for product_info
--- ----------------------------
 DROP TABLE IF EXISTS `product_info`;
 CREATE TABLE `product_info` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -775,9 +664,6 @@ CREATE TABLE `product_info` (
   KEY `key_createby_status` (`status`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1918 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='基础产品表';
 
--- ----------------------------
--- Table structure for qrtz_blob_triggers
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_blob_triggers`;
 CREATE TABLE `qrtz_blob_triggers` (
   `sched_name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -788,9 +674,6 @@ CREATE TABLE `qrtz_blob_triggers` (
   CONSTRAINT `qrtz_blob_triggers_ibfk_1` FOREIGN KEY (`sched_name`, `trigger_name`, `trigger_group`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_calendars
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_calendars`;
 CREATE TABLE `qrtz_calendars` (
   `sched_name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -799,9 +682,6 @@ CREATE TABLE `qrtz_calendars` (
   PRIMARY KEY (`sched_name`,`calendar_name`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_cron_triggers
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_cron_triggers`;
 CREATE TABLE `qrtz_cron_triggers` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -813,9 +693,6 @@ CREATE TABLE `qrtz_cron_triggers` (
   CONSTRAINT `qrtz_cron_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_fired_triggers
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_fired_triggers`;
 CREATE TABLE `qrtz_fired_triggers` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -834,9 +711,6 @@ CREATE TABLE `qrtz_fired_triggers` (
   PRIMARY KEY (`SCHED_NAME`,`ENTRY_ID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_job_details
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_job_details`;
 CREATE TABLE `qrtz_job_details` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -852,9 +726,6 @@ CREATE TABLE `qrtz_job_details` (
   PRIMARY KEY (`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_locks
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_locks`;
 CREATE TABLE `qrtz_locks` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -862,9 +733,6 @@ CREATE TABLE `qrtz_locks` (
   PRIMARY KEY (`SCHED_NAME`,`LOCK_NAME`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_paused_trigger_grps
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_paused_trigger_grps`;
 CREATE TABLE `qrtz_paused_trigger_grps` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -872,9 +740,6 @@ CREATE TABLE `qrtz_paused_trigger_grps` (
   PRIMARY KEY (`SCHED_NAME`,`TRIGGER_GROUP`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_scheduler_state
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_scheduler_state`;
 CREATE TABLE `qrtz_scheduler_state` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -884,9 +749,6 @@ CREATE TABLE `qrtz_scheduler_state` (
   PRIMARY KEY (`SCHED_NAME`,`INSTANCE_NAME`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_simple_triggers
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_simple_triggers`;
 CREATE TABLE `qrtz_simple_triggers` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -899,9 +761,6 @@ CREATE TABLE `qrtz_simple_triggers` (
   CONSTRAINT `qrtz_simple_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_simprop_triggers
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_simprop_triggers`;
 CREATE TABLE `qrtz_simprop_triggers` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -922,9 +781,6 @@ CREATE TABLE `qrtz_simprop_triggers` (
   CONSTRAINT `qrtz_simprop_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for qrtz_triggers
--- ----------------------------
 DROP TABLE IF EXISTS `qrtz_triggers`;
 CREATE TABLE `qrtz_triggers` (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -948,9 +804,6 @@ CREATE TABLE `qrtz_triggers` (
   CONSTRAINT `qrtz_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) REFERENCES `qrtz_job_details` (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for sys_api_log
--- ----------------------------
 DROP TABLE IF EXISTS `sys_api_log`;
 CREATE TABLE `sys_api_log` (
   `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -972,9 +825,6 @@ CREATE TABLE `sys_api_log` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='用户日志表';
 
--- ----------------------------
--- Table structure for sys_client
--- ----------------------------
 DROP TABLE IF EXISTS `sys_client`;
 CREATE TABLE `sys_client` (
   `id` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -991,9 +841,6 @@ CREATE TABLE `sys_client` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for sys_config
--- ----------------------------
 DROP TABLE IF EXISTS `sys_config`;
 CREATE TABLE `sys_config` (
   `config_id` int NOT NULL AUTO_INCREMENT COMMENT '参数主键',
@@ -1009,9 +856,6 @@ CREATE TABLE `sys_config` (
   PRIMARY KEY (`config_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='参数配置表';
 
--- ----------------------------
--- Table structure for sys_dept
--- ----------------------------
 DROP TABLE IF EXISTS `sys_dept`;
 CREATE TABLE `sys_dept` (
   `dept_id` bigint NOT NULL AUTO_INCREMENT COMMENT '部门id',
@@ -1031,9 +875,6 @@ CREATE TABLE `sys_dept` (
   PRIMARY KEY (`dept_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='部门表';
 
--- ----------------------------
--- Table structure for sys_dict_data
--- ----------------------------
 DROP TABLE IF EXISTS `sys_dict_data`;
 CREATE TABLE `sys_dict_data` (
   `dict_code` bigint NOT NULL AUTO_INCREMENT COMMENT '字典编码',
@@ -1053,9 +894,6 @@ CREATE TABLE `sys_dict_data` (
   PRIMARY KEY (`dict_code`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='字典数据表';
 
--- ----------------------------
--- Table structure for sys_dict_type
--- ----------------------------
 DROP TABLE IF EXISTS `sys_dict_type`;
 CREATE TABLE `sys_dict_type` (
   `dict_id` bigint NOT NULL AUTO_INCREMENT COMMENT '字典主键',
@@ -1071,9 +909,6 @@ CREATE TABLE `sys_dict_type` (
   UNIQUE KEY `dict_type` (`dict_type`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='字典类型表';
 
--- ----------------------------
--- Table structure for sys_file
--- ----------------------------
 DROP TABLE IF EXISTS `sys_file`;
 CREATE TABLE `sys_file` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -1093,9 +928,6 @@ CREATE TABLE `sys_file` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=29985 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='文件表';
 
--- ----------------------------
--- Table structure for sys_job
--- ----------------------------
 DROP TABLE IF EXISTS `sys_job`;
 CREATE TABLE `sys_job` (
   `job_id` bigint NOT NULL AUTO_INCREMENT COMMENT '任务ID',
@@ -1114,9 +946,6 @@ CREATE TABLE `sys_job` (
   PRIMARY KEY (`job_id`,`job_name`,`job_group`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='定时任务调度表';
 
--- ----------------------------
--- Table structure for sys_job_log
--- ----------------------------
 DROP TABLE IF EXISTS `sys_job_log`;
 CREATE TABLE `sys_job_log` (
   `job_log_id` bigint NOT NULL AUTO_INCREMENT COMMENT '任务日志ID',
@@ -1130,9 +959,6 @@ CREATE TABLE `sys_job_log` (
   PRIMARY KEY (`job_log_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='定时任务调度日志表';
 
--- ----------------------------
--- Table structure for sys_logininfor
--- ----------------------------
 DROP TABLE IF EXISTS `sys_logininfor`;
 CREATE TABLE `sys_logininfor` (
   `info_id` bigint NOT NULL AUTO_INCREMENT COMMENT '访问ID',
@@ -1147,9 +973,6 @@ CREATE TABLE `sys_logininfor` (
   PRIMARY KEY (`info_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=6546 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='系统访问记录';
 
--- ----------------------------
--- Table structure for sys_menu
--- ----------------------------
 DROP TABLE IF EXISTS `sys_menu`;
 CREATE TABLE `sys_menu` (
   `menu_id` bigint NOT NULL AUTO_INCREMENT COMMENT '菜单ID',
@@ -1171,9 +994,6 @@ CREATE TABLE `sys_menu` (
   PRIMARY KEY (`menu_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2160 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='菜单权限表';
 
--- ----------------------------
--- Table structure for sys_notice
--- ----------------------------
 DROP TABLE IF EXISTS `sys_notice`;
 CREATE TABLE `sys_notice` (
   `notice_id` int NOT NULL AUTO_INCREMENT COMMENT '公告ID',
@@ -1189,9 +1009,6 @@ CREATE TABLE `sys_notice` (
   PRIMARY KEY (`notice_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='通知公告表';
 
--- ----------------------------
--- Table structure for sys_oper_log
--- ----------------------------
 DROP TABLE IF EXISTS `sys_oper_log`;
 CREATE TABLE `sys_oper_log` (
   `oper_id` bigint NOT NULL AUTO_INCREMENT COMMENT '日志主键',
@@ -1213,9 +1030,6 @@ CREATE TABLE `sys_oper_log` (
   PRIMARY KEY (`oper_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=7636 DEFAULT CHARSET=utf8mb3 COMMENT='操作日志记录';
 
--- ----------------------------
--- Table structure for sys_post
--- ----------------------------
 DROP TABLE IF EXISTS `sys_post`;
 CREATE TABLE `sys_post` (
   `post_id` bigint NOT NULL AUTO_INCREMENT COMMENT '岗位ID',
@@ -1231,9 +1045,6 @@ CREATE TABLE `sys_post` (
   PRIMARY KEY (`post_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='岗位信息表';
 
--- ----------------------------
--- Table structure for sys_role
--- ----------------------------
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role` (
   `role_id` bigint NOT NULL AUTO_INCREMENT COMMENT '角色ID',
@@ -1251,9 +1062,6 @@ CREATE TABLE `sys_role` (
   PRIMARY KEY (`role_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='角色信息表';
 
--- ----------------------------
--- Table structure for sys_role_dept
--- ----------------------------
 DROP TABLE IF EXISTS `sys_role_dept`;
 CREATE TABLE `sys_role_dept` (
   `role_id` bigint NOT NULL COMMENT '角色ID',
@@ -1261,9 +1069,6 @@ CREATE TABLE `sys_role_dept` (
   PRIMARY KEY (`role_id`,`dept_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='角色和部门关联表';
 
--- ----------------------------
--- Table structure for sys_role_menu
--- ----------------------------
 DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE `sys_role_menu` (
   `role_id` bigint NOT NULL COMMENT '角色ID',
@@ -1271,9 +1076,6 @@ CREATE TABLE `sys_role_menu` (
   PRIMARY KEY (`role_id`,`menu_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='角色和菜单关联表';
 
--- ----------------------------
--- Table structure for sys_user
--- ----------------------------
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user` (
   `user_id` bigint NOT NULL AUTO_INCREMENT COMMENT '用户ID',
@@ -1302,9 +1104,6 @@ CREATE TABLE `sys_user` (
   PRIMARY KEY (`user_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='用户信息表';
 
--- ----------------------------
--- Table structure for sys_user_online
--- ----------------------------
 DROP TABLE IF EXISTS `sys_user_online`;
 CREATE TABLE `sys_user_online` (
   `sessionId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '用户会话id',
@@ -1321,9 +1120,6 @@ CREATE TABLE `sys_user_online` (
   PRIMARY KEY (`sessionId`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='在线用户记录';
 
--- ----------------------------
--- Table structure for sys_user_post
--- ----------------------------
 DROP TABLE IF EXISTS `sys_user_post`;
 CREATE TABLE `sys_user_post` (
   `user_id` bigint NOT NULL COMMENT '用户ID',
@@ -1331,9 +1127,6 @@ CREATE TABLE `sys_user_post` (
   PRIMARY KEY (`user_id`,`post_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='用户与岗位关联表';
 
--- ----------------------------
--- Table structure for sys_user_role
--- ----------------------------
 DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE `sys_user_role` (
   `user_id` bigint NOT NULL COMMENT '用户ID',
@@ -1341,9 +1134,6 @@ CREATE TABLE `sys_user_role` (
   PRIMARY KEY (`user_id`,`role_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='用户和角色关联表';
 
--- ----------------------------
--- Table structure for t_dict
--- ----------------------------
 DROP TABLE IF EXISTS `t_dict`;
 CREATE TABLE `t_dict` (
   `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -1359,9 +1149,6 @@ CREATE TABLE `t_dict` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='字典表';
 
--- ----------------------------
--- Table structure for t_quartz_job
--- ----------------------------
 DROP TABLE IF EXISTS `t_quartz_job`;
 CREATE TABLE `t_quartz_job` (
   `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -1378,9 +1165,6 @@ CREATE TABLE `t_quartz_job` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for t_user
--- ----------------------------
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -1407,9 +1191,6 @@ CREATE TABLE `t_user` (
   UNIQUE KEY `UK_jhib4legehrm4yscx9t3lirqi` (`username`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Procedure structure for create_partition_order_flow
--- ----------------------------
 DROP PROCEDURE IF EXISTS `create_partition_order_flow`;
 DELIMITER ;;
 CREATE DEFINER=`root`@`%` PROCEDURE `create_partition_order_flow`()
@@ -1443,9 +1224,6 @@ BEGIN
 ;;
 DELIMITER ;
 
--- ----------------------------
--- Procedure structure for p_departmentChilds
--- ----------------------------
 DROP PROCEDURE IF EXISTS `p_departmentChilds`;
 DELIMITER ;;
 CREATE DEFINER=`root`@`%` PROCEDURE `p_departmentChilds`(IN `in_id` bigint)
@@ -1470,9 +1248,6 @@ end
 ;;
 DELIMITER ;
 
--- ----------------------------
--- Procedure structure for save_order
--- ----------------------------
 DROP PROCEDURE IF EXISTS `save_order`;
 DELIMITER ;;
 CREATE DEFINER=`root`@`%` PROCEDURE `save_order`(
@@ -1561,9 +1336,6 @@ END
 ;;
 DELIMITER ;
 
--- ----------------------------
--- Procedure structure for test_proce
--- ----------------------------
 DROP PROCEDURE IF EXISTS `test_proce`;
 DELIMITER ;;
 CREATE DEFINER=`root`@`%` PROCEDURE `test_proce`()
@@ -1573,9 +1345,6 @@ end
 ;;
 DELIMITER ;
 
--- ----------------------------
--- Event structure for partition_order_flow_event
--- ----------------------------
 DROP EVENT IF EXISTS `partition_order_flow_event`;
 DELIMITER ;;
 CREATE DEFINER=`root`@`%` EVENT `partition_order_flow_event` ON SCHEDULE EVERY 1 DAY STARTS '2021-09-27 23:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN  
