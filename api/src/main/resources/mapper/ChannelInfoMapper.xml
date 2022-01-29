@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ryhy.modules.mapper.ChannelInfoMapper">
+<resultMap type="com.ryhy.modules.channel.entity.ChannelInfo" id="channelMerAuthResult">
+        <result property="id"    column="id"    />
+        <result property="channelCode"    column="channel_code"    />
+        <result property="status"    column="status"    />
+        <result property="channelName"    column="channel_name"    />
+        <result property="rate"    column="rate"    />
+    </resultMap>
+	<select id="selectByProduct" parameterType="java.util.Map" resultMap="channelMerAuthResult">
+		select c.*,e.rate from channel_info c,channel_setting_info s ,channel_account a,channel_product_auth e
+where c.company_id=#{companyId} and e.product_id=#{productId} and c.`status`=1 and c.id=s.channel_id and s.appid is not NULL
+and c.id=a.channel_id and a.credit_balance_amt>#{amt} and c.max_time&lt;#{time}  and c.id=e.channel_id 
+</select>
+</mapper>

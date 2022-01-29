@@ -1,0 +1,23 @@
+provider port 8861 dubboport 20881
+huahuo   port 8862 dubboport 20882
+qidd     port 8863 dubboport 20883
+auto     port 8864 dubboport 20884
+c10      port 8866 dubboport 20886
+c4       port 8865 dubboport 20885
+c5       port 8869 dubboport 20889
+c6       port 8867 dubboport 20887
+c7       port 8871 dubboport 20871
+c8       port 8873 dubboport 20873
+c9       port 8874 dubboport 20874
+c17      port 8875 dubboport 20875
+d1       port 8876 dubboport 20876
+d2       port 8877 dubboport 20877
+d3       port 8879 dubboport 20879
+n1       port 8890 dubboport 20890
+d4       port 8891 dubboport 20891
+d5       port 8892 dubboport 20892
+d6       port 8893 dubboport 20893
+d7       port 8894 dubboport 20894
+
+qiangdan       port 8870
+job       port 8872

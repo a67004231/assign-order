@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ryhy.modules.mapper.MerProductAuthMapper">
+	<resultMap type="com.ryhy.modules.merchant.entity.MerProductAuth" id="merProductAuthResult">
+        <result property="id"    column="id"    />
+        <result property="merId"    column="mer_id"    />
+        <result property="productId"    column="product_id"    />
+        <result property="productCode"    column="product_code"    />
+        <result property="rateType"    column="rate_type"    />
+        <result property="rate"    column="rate"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="channelId"    column="channel_id"    />
+        <result property="channelCode"    column="channel_code"    />
+    </resultMap>
+<select id="selectByAccount" parameterType="java.util.Map" resultMap="merProductAuthResult">
+	select p.* from mer_product_auth p,channel_info c,channel_setting_info s ,channel_account a
+where p.mer_id=#{merId} and p.product_id=#{productId} and p.channel_id=c.id and c.`status`=1 and p.channel_id=s.channel_id and s.appid is not NULL
+and p.channel_id=a.channel_id and a.credit_balance_amt>#{amt} and c.max_time&lt;#{time} and p.mer_id=s.mer_id
+</select>
+</mapper>
